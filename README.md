@@ -12,7 +12,7 @@ https://monosnap.com/file/00NgwE2cJuRia42cbDXYDYD12zC33O
 
 # REACT NATIVE HOMEWORK #02
 
-# 1.Cкриншоты экрана "Регистрация" и результата отправки формы
+# 1.Cкриншоты экрана "LoginScreen" и результата отправки формы
 
 https://monosnap.com/file/33Dboaji5RHM5PZGUlOFBAq5XoZZew
 
@@ -20,7 +20,7 @@ https://monosnap.com/file/hqQozARllJnWLtUALMQ3ZtKtG0tqCr
 
 https://monosnap.com/file/OeYjuYWNZoh8DSVQ1oLovpBoJYefnv
 
-# 2.Cкриншоты экрана "Войти" и результата отправки формы
+# 2.Cкриншоты экрана "RegistrationScreen" и результата отправки формы
 
 https://monosnap.com/file/hsCDKQXo3Pl3kjopIrqc37o5e7y09Z
 
