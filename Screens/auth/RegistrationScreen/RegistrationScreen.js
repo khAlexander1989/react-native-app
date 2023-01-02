@@ -1,10 +1,13 @@
+import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import {
   View,
   Text,
+  Image,
   Keyboard,
   Platform,
   TextInput,
+  StyleSheet,
   ImageBackground,
   TouchableOpacity,
   KeyboardAvoidingView,
@@ -13,15 +16,20 @@ import {
 
 import styles from "./styles";
 
+import { register } from "../../../redux/auth/slice";
+
 const initialFormData = {
+  login: "",
   email: "",
   password: "",
 };
 
-export default function RegistrationScreen() {
+export default function RegistrationScreen({ navigation }) {
   const [formData, setFormData] = useState(initialFormData);
   const [isKeyboardShown, setIsKeyboardShown] = useState(false);
   const [isPassShown, setIsPassShown] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const hideSubscription = Keyboard.addListener("keyboardDidHide", () =>
@@ -46,6 +54,7 @@ export default function RegistrationScreen() {
     console.log(formData);
     resetForm();
     hideKeyboard();
+    dispatch(register());
   }
 
   function handleFocus() {
@@ -59,7 +68,7 @@ export default function RegistrationScreen() {
   return (
     <TouchableWithoutFeedback onPress={hideKeyboard}>
       <ImageBackground
-        source={require("../../assets/Images/BG/Landscape.jpg")}
+        source={require("../../../assets/Images/BG/Landscape.jpg")}
         style={styles.bg}
         resizeMode="cover"
       >
@@ -67,11 +76,36 @@ export default function RegistrationScreen() {
           <View
             style={{
               ...styles.container,
-              paddingBottom: isKeyboardShown ? 10 : 144,
+              paddingBottom: isKeyboardShown ? 10 : 78,
             }}
           >
-            <Text style={styles.title}>Войти</Text>
+            <View style={styles.avatarContainer}>
+              <TouchableOpacity style={styles.addImageBtn} activeOpacity={0.7}>
+                <Image
+                  style={styles.addBtnIcon}
+                  source={require("../../../assets/Images/Icons/addBtnIcon.png")}
+                />
+              </TouchableOpacity>
+              <Image
+                style={styles.avatar}
+                source={require("../../../assets/Images/noPhoto.jpg")}
+                resizeMode="cover"
+              />
+            </View>
+            <Text style={styles.title}>Регистрация</Text>
             <View style={styles.form}>
+              <TextInput
+                style={{
+                  ...styles.input,
+                  marginTop: 0,
+                }}
+                placeholder="Логин"
+                value={formData.login}
+                onFocus={handleFocus}
+                onChangeText={(data) =>
+                  setFormData((prevData) => ({ ...prevData, login: data }))
+                }
+              />
               <TextInput
                 style={styles.input}
                 placeholder="Адрес электронной почты"
@@ -108,16 +142,23 @@ export default function RegistrationScreen() {
                 activeOpacity={0.8}
                 onPress={handleSubmit}
               >
-                <Text style={styles.submitBtnLabel}>Войти</Text>
+                <Text style={styles.submitBtnLabel}>Зарегистрироваться</Text>
               </TouchableOpacity>
-              <Text
+              <View
                 style={{
-                  ...styles.registrationLink,
+                  ...styles.loginOfferContainer,
                   marginBottom: isKeyboardShown ? -110 : 0,
                 }}
               >
-                Нет аккаунта? Зарегистрироваться.
-              </Text>
+                <Text style={styles.loginOfferText}>Уже есть аккаунт?</Text>
+                <TouchableOpacity
+                  style={styles.loginOfferBtn}
+                  activeOpacity={0.6}
+                  onPress={() => navigation.navigate("login")}
+                >
+                  <Text style={styles.loginOfferBtnLabel}>Войти.</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </KeyboardAvoidingView>
