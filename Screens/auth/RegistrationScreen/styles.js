@@ -101,9 +101,17 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     color: "#ffffff",
   },
-  singInLink: {
+  loginOfferContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
     marginTop: 16,
-    textAlign: "center",
+  },
+  loginOfferText: {},
+  loginOfferBtn: {},
+  loginOfferBtnLabel: {
+    color: "#1B4371",
+    marginLeft: 5,
+    textDecorationLine: "underline",
   },
 });
 

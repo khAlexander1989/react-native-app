@@ -66,9 +66,17 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     color: "#ffffff",
   },
-  registrationLink: {
+  regOfferContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
     marginTop: 16,
-    textAlign: "center",
+  },
+  regOfferText: {},
+  regOfferBtn: {},
+  regOfferBtnLabel: {
+    color: "#1B4371",
+    marginLeft: 5,
+    textDecorationLine: "underline",
   },
 });
 
