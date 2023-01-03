@@ -24,8 +24,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     borderRadius: 16,
-    // fliex: 1,
-    // backgroundColor: "#F6F6F6",
   },
   addImageBtn: {
     position: "absolute",

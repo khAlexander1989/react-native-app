@@ -20,11 +20,14 @@ export default function Home() {
   return (
     <MainTab.Navigator
       initialRouteName="posts"
-      tabBarOptions={{ showLabel: false }}
+      screenOptions={{
+        tabBarShowLabel: false,
+      }}
     >
       <MainTab.Group
         screenOptions={{
           headerTitleAlign: "center",
+          showLabel: false,
         }}
       >
         <MainTab.Screen
