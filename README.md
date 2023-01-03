@@ -33,3 +33,9 @@ https://monosnap.com/file/yDDgkVYINvlcjeH2BQiDJLAwVZSXrv
 # Видео работы навигации
 
 https://drive.google.com/file/d/17S5rVUuZSP-ROXfdSFOuJL_bUaNXtGNj/view?usp=share_link
+
+# REACT NATIVE HOMEWORK #05
+
+# Видео работы приложения
+
+https://drive.google.com/file/d/17dAsraKGMyVUFhutNtSCO3rfMSQPoiej/view?usp=share_link
