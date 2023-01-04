@@ -4,7 +4,6 @@ import RegistrationScreen from "../RegistrationScreen/RegistrationScreen";
 import LoginScreen from "../LoginScreen/LoginScreen";
 
 const authStack = createNativeStackNavigator();
-console.log(authStack);
 
 export default function Auth() {
   return (
