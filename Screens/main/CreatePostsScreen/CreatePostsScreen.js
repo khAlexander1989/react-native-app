@@ -113,6 +113,13 @@ export default function CreatePostsScreen({ navigation }) {
         console.log("Permission to access location was denied");
       }
     })();
+    (async function () {
+      const { status } = await Camera.requestCameraPermissionsAsync();
+
+      if (status !== "granted") {
+        console.log("Permission to access camera was denied");
+      }
+    })();
   }, []);
 
   const { photo, name, place } = postData;

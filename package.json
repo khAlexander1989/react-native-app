@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/dev-tools": "^0.13.173",
     "@expo/webpack-config": "^0.17.2",
     "@react-navigation/bottom-tabs": "^6.5.2",
     "@react-navigation/native": "^6.1.1",
@@ -33,7 +34,8 @@
     "react-native-web": "~0.18.9",
     "react-redux": "^8.0.5",
     "react-spinners": "^0.13.7",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "expo-updates": "~0.15.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
