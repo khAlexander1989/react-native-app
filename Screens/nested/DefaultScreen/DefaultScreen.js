@@ -1,28 +1,32 @@
 import { useState, useEffect } from "react";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
+import { collection, onSnapshot } from "firebase/firestore";
 
 import styles from "./styles";
 
 import LocationIcon from "../../../assets/Icons/location-input-icon.svg";
 import CommentsIcon from "../../../assets/Icons/comments-icon.svg";
+import { db } from "../../../firebase/config";
 
-export default function PostsScreen({ route, navigation }) {
+export default function PostsScreen({ navigation }) {
   const [posts, setPosts] = useState([]);
 
+  const getPosts = async () => {
+    onSnapshot(collection(db, "posts"), (data) =>
+      setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    );
+  };
+
   useEffect(() => {
-    if (route.params) {
-      setPosts((prevPosts) => [...prevPosts, route.params.postData]);
-    }
-  }, [route.params]);
+    getPosts();
+  }, []);
 
   return (
     <View style={styles.container}>
       <FlatList
         data={posts}
-        keyExtractor={(_, idx) => idx.toString()}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
-          console.log("name: ", item.name);
-
           return (
             <View style={styles.postContainer}>
               <Image
@@ -34,7 +38,12 @@ export default function PostsScreen({ route, navigation }) {
               <View style={styles.postInfoContainer}>
                 <TouchableOpacity
                   style={styles.postComments}
-                  onPress={() => navigation.navigate("comments")}
+                  onPress={() =>
+                    navigation.navigate("comments", {
+                      postId: item.id,
+                      photo: item.photo,
+                    })
+                  }
                 >
                   <CommentsIcon size={24} />
                   <Text style={styles.PostCommentsCount}>0</Text>
@@ -43,7 +52,7 @@ export default function PostsScreen({ route, navigation }) {
                   style={styles.postLocation}
                   onPress={() =>
                     navigation.navigate("map", {
-                      coords: item.location.coords,
+                      coords: item.location,
                       place: item.place,
                     })
                   }

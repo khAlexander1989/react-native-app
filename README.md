@@ -39,3 +39,13 @@ https://drive.google.com/file/d/17S5rVUuZSP-ROXfdSFOuJL_bUaNXtGNj/view?usp=share
 # Видео работы приложения
 
 https://drive.google.com/file/d/17dAsraKGMyVUFhutNtSCO3rfMSQPoiej/view?usp=share_link
+
+# REACT NATIVE HOMEWORK #06
+
+# Регистрация и вход в приложение
+
+https://drive.google.com/file/d/17n2TYrDTjqOrj0qlFy3CSl8z0dXaaCPo/view?usp=share_link
+
+# Добавление постов и комментариев
+
+https://drive.google.com/file/d/17n3R4itY_RW4Sqc7s7A1Qtsz9lqBM8J1/view?usp=share_link

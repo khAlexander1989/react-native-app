@@ -16,7 +16,7 @@ import {
 
 import styles from "./styles";
 
-import { register } from "../../../redux/auth/slice";
+import { register } from "../../../redux/auth/operations";
 
 const initialFormData = {
   login: "",
@@ -51,10 +51,9 @@ export default function RegistrationScreen({ navigation }) {
   }
 
   function handleSubmit() {
-    console.log(formData);
-    resetForm();
+    dispatch(register(formData));
     hideKeyboard();
-    dispatch(register());
+    resetForm();
   }
 
   function handleFocus() {

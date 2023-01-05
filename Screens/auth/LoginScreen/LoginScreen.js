@@ -14,7 +14,7 @@ import {
 
 import styles from "./styles";
 
-import { login } from "../../../redux/auth/slice";
+import { logIn } from "../../../redux/auth/operations";
 
 const initialFormData = {
   email: "",
@@ -25,9 +25,6 @@ export default function RegistrationScreen({ navigation }) {
   const [formData, setFormData] = useState(initialFormData);
   const [isKeyboardShown, setIsKeyboardShown] = useState(false);
   const [isPassShown, setIsPassShown] = useState(false);
-
-  console.log("sldkjslkjflks");
-  console.log(login);
 
   const dispatch = useDispatch();
 
@@ -54,7 +51,7 @@ export default function RegistrationScreen({ navigation }) {
     console.log(formData);
     resetForm();
     hideKeyboard();
-    dispatch(login());
+    dispatch(logIn(formData));
   }
 
   function handleFocus() {

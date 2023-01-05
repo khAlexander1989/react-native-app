@@ -10,7 +10,7 @@ import ProfileIcon from "../../../assets/Icons/profile.svg";
 import PostsScreen from "../PostsScreen";
 import CreatePostsScreen from "../CreatePostsScreen";
 import ProfileScreen from "../ProfileScreen";
-import { logout } from "../../../redux/auth/slice";
+import { logOut } from "../../../redux/auth/operations";
 
 const MainTab = createBottomTabNavigator();
 
@@ -39,7 +39,7 @@ export default function Home() {
             tabBarInactiveTintColor: "#212121",
             headerRight: () => (
               <TouchableOpacity
-                onPress={() => dispatch(logout())}
+                onPress={() => dispatch(logOut())}
                 style={{
                   width: 24,
                   height: 24,
